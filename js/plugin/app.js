@@ -26,7 +26,6 @@ app.directive('quiz', [
                         vm.position = 0;
                         vm.submitReady = false;
                     };
-
                     vm.run = function () {
                         $http.get('kuis' + vm.quiz + '/questions.php').success(function (response) { // Change the endpoint as you wish
                             vm.questions = response.result;
@@ -43,7 +42,7 @@ app.directive('quiz', [
                         };
                         vm.submit = function () {
                             if (vm.position === vm.questions.length - 1) {
-                                $http.post('submit.php', vm.answers).success(function (response) {
+                                $http.post('kuis' + vm.quiz + '/submit.php', vm.answers).success(function (response) {
                                     vm.results = response.result;
                                     console.log(JSON.stringify(vm.results));
                                     var correct = 0;

@@ -17,7 +17,7 @@
                 </div>
                 <div class="holder fx-zoom-normal fx-ease-none fx-dur-200" ng-style="{'width': quiz.displayW}" ng-if="quiz.ended">
                     <h3 ng-if="quiz.results.length > 0">Skor akhir:</h3>
-                    <p style="color: black">{{score}}</p>
+                    <p style="color: black">{{quiz.score}}</p>
                     <div class="row" style="margin-top:20px">
                         <div class="col-xs-4" ng-repeat="result in ::quiz.results track by result.id" style="padding:10px";>
                             Jawaban No.{{($index+1)}}
