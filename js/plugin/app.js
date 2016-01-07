@@ -6,10 +6,10 @@ app.directive('quiz', [
             restrict: 'A',
             scope: true,
             templateUrl: 'section/kuisTemplate.html',
-            bindToController: { quiz: '@' },
+            bindToController: {quiz: '@'},
             controllerAs: 'quiz',
-            controller: ['$scope', '$http', '$timeout',
-                function ($scope, $http, $timeout) {
+            controller: ['$http', '$timeout',
+                function ($http, $timeout) {
                     var vm = this;
                     vm.init = function () {
                         vm.displayW = 900; // Gunakan ini untuk set lebar dari tampilan utama aplikasi secara global
@@ -25,14 +25,13 @@ app.directive('quiz', [
                         vm.answered = 0;
                         vm.position = 0;
                         vm.submitReady = false;
-                    }
+                    };
 
                     vm.run = function () {
-
-                        $http.get('questions.php').success(function (response) { // Change the endpoint as you wish
+                        $http.get('kuis' + vm.quiz + '/questions.php').success(function (response) { // Change the endpoint as you wish
                             vm.questions = response.result;
                             angular.forEach(response.result, function (value, key) {
-                                vm.answers.push({ 'id': value.id, 'answer': 0 });
+                                vm.answers.push({'id': value.id, 'answer': 0});
                             });
                         });
                         vm.startApp = function () {
@@ -41,7 +40,7 @@ app.directive('quiz', [
                                 vm.begin = true;
                                 $timeout.cancel(s);
                             });
-                        }
+                        };
                         vm.submit = function () {
                             if (vm.position === vm.questions.length - 1) {
                                 $http.post('submit.php', vm.answers).success(function (response) {
@@ -59,7 +58,7 @@ app.directive('quiz', [
                                     console.log(vm.results.length);
                                     console.log(distance);
                                     vm.ended = true;
-                                    angular.element('#quiz-' + vm.quiz + '.scrolls').animate({ scrollLeft: distance }, 500);
+                                    angular.element('#quiz-' + vm.quiz + '.scrolls').animate({scrollLeft: distance}, 500);
                                     console.log(vm.results);
                                 });
                             }
@@ -68,41 +67,41 @@ app.directive('quiz', [
                             if (vm.position < vm.questions.length - 1) {
                                 var distance = 900 + (900 * vm.position);
                                 console.log(distance);
-                                angular.element('#quiz-' + vm.quiz + '.scrolls').animate({ scrollLeft: distance }, 500);
+                                angular.element('#quiz-' + vm.quiz + '.scrolls').animate({scrollLeft: distance}, 500);
                                 vm.position++;
                                 if (vm.position === vm.questions.length - 1) {
                                     vm.submitReady = true;
                                 }
                             }
-                        }
+                        };
                         vm.prev = function () {
                             if (vm.position > 0) {
                                 vm.submitReady = false;
                                 var distance = (900 * (vm.position)) - 900;
                                 console.log(distance);
-                                angular.element('#quiz-' + vm.quiz + '.scrolls').animate({ scrollLeft: distance }, 500);
+                                angular.element('#quiz-' + vm.quiz + '.scrolls').animate({scrollLeft: distance}, 500);
                                 vm.position--;
                                 if (vm.position === vm.questions.length - 2) {
                                     vm.submitReady = false;
                                 }
                             }
-                        }
+                        };
                         vm.choose = function (id, index, answerId) {
                             console.log(vm.answers[vm.position].answer);
-                            if (vm.answers[vm.position].answer == 0) { // If hasn't answered, iterate the vm.answered
+                            if (vm.answers[vm.position].answer === 0) { // If hasn't answered, iterate the vm.answered
                                 vm.answered++;
                             }
-                            vm.answers[vm.position] = { "id": id, "index": index, "answer": answerId };
-                        }
+                            vm.answers[vm.position] = {"id": id, "index": index, "answer": answerId};
+                        };
 
                         vm.reload = function () {
                             vm.init();
                             vm.reset();
                             vm.run();
-                        }
-                    }
+                        };
+                    };
                     vm.reset();
                     vm.run();
                 }]
-        }
+        };
     }]);

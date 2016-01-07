@@ -7,7 +7,6 @@
                 <div class="holder" ng-repeat="q in quiz.questions track by q.id" ng-style="{'width': quiz.displayW}" ng-if="!quiz.ended">
                     <div class="panel">
                         <div class="bg-primary panel-heading" ng-bind="q.question"></div>
-                        {{quiz.answers[quiz.position].id == q.id}}
                         <ol>
                             <li ng-class="{'selected': (quiz.answers[quiz.position].id == q.id) && (quiz.answers[quiz.position].index == $index)}" ng-repeat="c in ::q.choices track by $index"
                             class="choice form-group" ng-click="quiz.choose(q.id, $index, c.id)">
