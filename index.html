@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-    session_start();
+   session_start();
     if (!isset($_SESSION['username'])) {
-    header("location:../index.html");
+        header("location:../index.html");
     }
     ?>
     <head>
@@ -30,7 +30,7 @@
     </head>
 
     <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
-
+        
         <div class="loader"></div>
         <div id="navbar-main"> 
 
@@ -38,8 +38,11 @@
             <div class="navbar navbar-default navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                        <a class="navbar-brand" href="#beranda"><img src="img/logo/logo-kecil.png"/></a> DESAIN WEB </div>
+                        <a class="navbar-brand" href="#beranda"><img src="img/logo/logo-kecil.png"></img>  DESAIN WEB</a> </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                        </ul>
+                    </div>
                     <!--/.nav-collapse --> 
                 </div>
             </div>
@@ -126,12 +129,12 @@
             <!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
             <script src="js/index.js"></script>
             <script type="text/javascript">
-                $(function () {
-                    $('.loader').fadeIn('slow', function () {
-                        $(this).delay(2200).fadeOut('fast');
-                    });
+            $(function () {
+                $('.loader').fadeIn('slow', function () {
+                    $(this).delay(2200).fadeOut('fast');
                 });
-            </script>
+            });
+        </script>
 
     </body>
 </html>

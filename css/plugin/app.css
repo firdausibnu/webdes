@@ -8,18 +8,18 @@ body{
     padding: 0px;
 }
 
-.wrapper2{
-    background: #fff;
+.wrapper{
+    background: #EFEFEF;
     text-align: center;
     margin: auto;    
     margin-top:30px;
     opacity: 0;
     height: 100%;
     /*width: 900px;  */
-    /*box-shadow:0 1px 5px #D9D9D9,inset 0 10px 20px #F1F1F1;*/ 
-/*     -o-box-shadow:0 1px 5px #D9D9D9,inset 0 10px 20px #F1F1F1; 
+    box-shadow:0 1px 5px #D9D9D9,inset 0 10px 20px #F1F1F1; 
+     -o-box-shadow:0 1px 5px #D9D9D9,inset 0 10px 20px #F1F1F1; 
      -webkit-box-shadow:0 1px 5px #D9D9D9,inset 0 10px 20px #F1F1F1; 
-     -moz-box-shadow:0 1px 5px #D9D9D9,inset 0 10px 20px #F1F1F1; */
+     -moz-box-shadow:0 1px 5px #D9D9D9,inset 0 10px 20px #F1F1F1; 
 }
 
 .scrolls{

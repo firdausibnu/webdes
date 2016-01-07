@@ -1,56 +1,519 @@
-<div ng-app="alfi2" id="kuis2" name="kuis2" style="margin-bottom: 30px;">
-    <div ng-controller="mainCtrl2">
-        <div class="wrapper2" ng-style="{'width': $root.displayW + 'px', 'opacity': 1}">
-            <div ng-click="startApp()" ng-if="$root.started" style="padding: 20px;">
-                <img src="img/start.png" />
+<!-- ==== KUIS 2 ==== -->
+<div id="kuis2" name="kuis2">
+    <div class="container">
+        <h3>KUIS 1</h3>
+        <!-- <p>Nah ini kak yang untuk slider kuisnya, mau ditaro disini</p> -->
+        <div id="main-quiz-holder">
+            <div id="intro-container" class="questionContainer">
+                <a class="btnStart" href="#">
+                    <img src="../img/quiz/start.png" />
+                </a>
             </div>
-            <div ng-if="$root.begin">
-                <div class="scrolls" id="scroll-container">
-                    <div class="holder" ng-repeat="q in questions track by q.id" ng-style="{'width': $root.displayW}" ng-if="!$root.ended">
-                        <div class="panel">
-                            <div class="bg-primary panel-heading" ng-bind="q.question"></div>
-                            <ol>
-                                <li ng-class="{'selected': (answers[position].id == q.id) && (answers[position].index == $index)}" ng-repeat="c in ::q.choices track by $index"
-                                class="choice form-group" ng-click="choose(q.id, $index, c.id)">
-                                    <span ng-bind="c.value"> </span>
-                                </li>
-                            </ol>
-                        </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">1. Pekerjaan di bidang teknologi informasi setidaknya dapat dikelompokkan menjadi 3 sesuai bidangnya, yakni
+                    ..
+                </div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />software, hardware, dan basis data</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />software, hardware, dan operasional sistem operasi</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />software, hardware, dan programmer</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />software, hardware, dan web programmer</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
                     </div>
-                    <div class="holder fx-zoom-normal fx-ease-none fx-dur-200" ng-style="{'width': $root.displayW}" ng-if="$root.ended">
-                        <h3 ng-if="results.length > 0">Skor akhir:</h3>
-                        <p style="color: black">{{score}}</p>
-                        <div class="row" style="margin-top:20px">
-                            <div class="col-xs-4" ng-repeat="result in ::results track by result.id" style="padding:10px" ;>
-                                Jawaban No.{{($index+1)}}
-                                <br/>
-                                <br/>
-                                <button class="btn" ng-class="{'btn-danger': !result.result, 'btn-success': result.result}">
-                                    <i class="glyphicon" ng-class="{'glyphicon-remove': !result.result, 'glyphicon-ok': result.result}"></i>
-                                    <span ng-if="!result.result">Salah</span>
-                                    <span ng-if="result.result">Benar</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="clear"></div>
                 </div>
             </div>
-            <div class="panel-footer" ng-if="$root.begin && $root.ended">
-                <button class="btn btn-primary" ng-click="reload()">
-                    <i class="glyphicon glyphicon-refresh"></i>&nbsp;Reload {{$root.begin}}</button>
+            <div class="questionContainer hidden-question">
+                <div class="question">2. Profesi yang terkait dalam pengembangan aplikasi web dan bertugas dalam melakukan pengcodingan sebuah
+                    website agar dinamis adalah profesi . . .</div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />Web designer</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />Web administrator</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />Web analyst</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />Web programmer </label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
             </div>
-            <div class="panel-footer" ng-if="$root.begin && !$root.ended">
-                <button class="btn btn-warning" ng-click="prev()" ng-disabled="position == 0" ng-if="$root.begin && !$root.ended">
-                    <i class="glyphicon glyphicon-chevron-left"></i>
-                </button>
-                <button class="btn btn-primary" ng-click="next()" ng-disabled="position == (questions.length - 1)" ng-if="$root.begin && !$root.ended">
-                    <i class="glyphicon glyphicon-chevron-right"></i>
-                </button>
-                <h3 ng-if="$root.begin && !$root.ended">Answered {{answered}} from {{questions.length}}</h3>
-                <button class="btn btn-success fx-zoom-normal fx-ease-none fx-dur-200" ng-click="submit()" ng-if="submitReady && $root.begin && !$root.ended">
-                    <i class="glyphicon glyphicon-ok"></i>&nbsp;<span>Submit</span>
-                </button>
+            <div class="questionContainer hidden-question">
+                <div class="question">3. Di bawah ini merupakan profesi dalam pengembangan web, kecuali . . </div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />Web browser </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />Web designer</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />Web programmer</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />Web analyst</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
             </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">4. FTP merupakan singkatan dari . . .
+                </div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />File Trust Project</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />File Traffic Project</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />File Transfer Protocol</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />File Transfer Project</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">5. WWW merupakan singkatan dari . . .
+                </div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />World Wide Web</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />World Web World</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />World Wide Will</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />World Web Wide</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">6. “Kumpulan web server dari seluruh dunia yang mempunyai kegunaan untuk menyediakan data dan informasi untuk
+                    dapat digunakan bersama” merupakan pengertian dari . . .
+                </div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" /> FTP</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />URL</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />HTML</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />WWW</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">7. Siapakah yang mengembangkan Web pertama kali?
+                </div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />Steve Job</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />Tim Berners Lee</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" /> Mark Zackerberg</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />Adam Lambert</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">8. Pada tahun berapakah WWW pertama kali resmi digunakan secara luas pada jaringan internet?
+                </div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />1991</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />1990</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />1992</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />1993</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">9. CERN merupakan . . .
+                </div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />Pusat Penelitian Biologi Partikel Eropa</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />Pusat Penelitian Kimia Partikel Eropa</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />Pusat Penelitian Matematika Partikel Eropa</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />Pusat Penelitian Fisika Partikel Eropa</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">10. HTML kepanjangan dari . . .</div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />Hyper Text Mark-up Language</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />Horizon Terminal Mark-up List</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />Hyper Text Manual Language</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />Hypno Terminal Maximal List</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">
+                    <code>span { font-size: 12px; padding: 2px; color: #fff; display: block;}</code>
+                    <br />
+                    <br />In the rule above, which of the declarations is irrelevant?</div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />display: block;</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />padding: 2px</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />color: #fff</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />font-size: 12px</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">
+                    <code>#id {margin: 20px 30px 10px 50px}</code>
+                    <br />
+                    <br />The margin-right value will be?</div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />10px</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />20px</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />50px</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />30px</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">Which property is used to change the size of text?</div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />typography</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />text-size</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />font-size</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />font-weight</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">
+                    <code>p div.selected</code> matches?</div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />Div with a class of selected which is a descendant of a paragraph.</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />Paragraph with a class of selected which is a descendant of a div.</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />Div with a class of selected which is an ancestor of a paragraph.</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />Paragraph with a class of selected which is a sibling of a div.</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">What is the order of precedence when you&#39;re embedding CSS using different methods?</div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />Embedded, then linked, then inline.</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" /> Inline, then embedded, and then linked.</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />Wait, what?</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />Inline, then linked, then embedded.</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnNext" href="#">Next</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="questionContainer hidden-question">
+                <div class="question">The * selector selects...</div>
+                <ul class="answers">
+                    <li>
+                        <label>
+                            <input data-key="a" type="radio" />every div element</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="b" type="radio" />only paragraphs</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="c" type="radio" />only parent elements</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input data-key="d" type="radio" />every element</label>
+                    </li>
+                </ul>
+                <div class="btnContainer">
+                    <div class="prev">
+                        <a class="btnPrev" href="#">Prev</a>
+                    </div>
+                    <div class="next">
+                        <a class="btnShowResult" href="#">Finish</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div id="results-container" class="questionContainer hidden-question">
+                <div id="resultKeeper"></div>
+            </div>
+            <div id="progressKeeper">
+                <div id="progress"></div>
+            </div>
+            <div id="notice">Please select an option</div>
         </div>
+        <script>
+            var kroggy = {answers: ['b', 'd', 'a', 'c', 'a', 'd', 'b', 'a', 'd', 'a', 'd', 'c', 'a', 'b', 'd']}
+        </script>
     </div>
 </div>
+<!-- row -->

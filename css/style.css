@@ -22,7 +22,7 @@ a:hover {
 
 h1 {
   text-align: center;
-  color: #fef8e0;
+  color: #ECCAB0;
   font-weight: 300;
   margin: 0 0 40px;
 }
@@ -57,7 +57,7 @@ label.active .req {
 }
 
 label.highlight {
-  color: #000;
+  color: #ECCAB0;
 }
 
 input, textarea {
@@ -69,14 +69,14 @@ input, textarea {
   background: none;
   background-image: none;
   border: 3px solid #a0b3b0;
-  color: #f47a62;
+  color: #ECCAB0;
   border-radius: 0;
   -webkit-transition: border-color .25s ease, box-shadow .25s ease;
           transition: border-color .25s ease, box-shadow .25s ease;
 }
 input:focus, textarea:focus {
   outline: 0;
-  border-color: #f47a62; //warna box diklik
+  border-color: #D64737; //warna box diklik
 }
 
 textarea {
@@ -112,14 +112,14 @@ textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #f47a62;
+  background: #BF3E3E;
   color: #fff;
   -webkit-transition: all 0.5s ease;
           transition: all 0.5s ease;
   -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-  background: #D65535; //login form diklik
+  background: #F84E49;
 }
 
 .button-block {
@@ -128,19 +128,57 @@ textarea {
 }
 
 /*-- banner-bottom --*/
-
-
+.banner-bottom h3{
+	font-size: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #414141;
+	margin: 2em 0;
+	font-weight: 700;
+}
+.bottom-grid{
+	text-align:center;
+}
+.bottom-grid-left:hover div.lock{
+	background: url(../img/icons.png) no-repeat 0px -88px;
+}
+.bottom-grid-middle:hover div.money{
+	background: url(../img/icons.png) no-repeat -65px -80px;
+}
+.bottom-grid-right:hover div.pin{
+	background: url(../img/icons.png) no-repeat -151px -90px;
+}
+.lock{
+	background: url(../img/icons.png) no-repeat 0px 0px;
+	width: 63px;
+	height: 70px;
+	margin: 0 auto;
+}
+.money{
+	background: url(../img/icons.png) no-repeat -65px 0px;
+	width: 86px;
+	height: 70px;
+	margin: 0 auto;
+}
+.pin{
+	background: url(../img/icons.png) no-repeat -151px 0px;
+	width: 63px;
+	height: 70px;
+	margin: 0 auto;
+}
 .bottom-grid h4{
 	font-size:26px;
-	color:#000;
+	color:#fff;
 	font-weight: 700;
 	margin: 1em 0;
 	text-transform:uppercase;
 }
-
 .bottom-grid p{
 	font-size: 18px;
-	color: #000;
+	color: #898888;
 	margin:0;
 	line-height: 1.8em;
+}
+.bottom-grid p span{
+	display:block;
 }

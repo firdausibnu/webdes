@@ -4,7 +4,7 @@ html, button, input, select, textarea {
 body {
 	font-size: 1em;
 	line-height: 1.4;
-        background-color: #dbe6d5;
+        background-color: #B0A48C;
 }
 
 .loader{
@@ -82,7 +82,7 @@ body {
 	padding-bottom: 30px;
 }
 .col-md-4 {
-        background-color: transparent;
+        background-color: #2B2B2B;
         
 }
 .row {
@@ -90,43 +90,16 @@ body {
 	margin-left: -15px;
 }
 .modal-header {
-	background: #f47a62; //warna background
+	background: #BF3E3E; //warna background
 }
-
 .modal-header button {
         color: white;
 }
-
 .modal-header h4 {
-	color: #fef8e0;
-	font-weight: 800;
-        font-size: 35px;
+	color: black;
+	font-weight: 700;
 	letter-spacing: 1px;
-        font-family: "BebasBold";
 }
-
-@font-face {
-    font-family: 'BebasBold';
-    src: url('../fonts/BebasBold.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.button-block {
-	color: #fef8e0;
-	font-weight: 800;
-        font-size: 30px;
-	letter-spacing: 1px;
-        font-family: "BebasBold";
-}
-
-@font-face {
-    font-family: 'BebasBold';
-    src: url('../fonts/BebasBold.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
 .modal-footer {
 	background: #655D52;
         padding-bottom: 0px;
@@ -139,26 +112,20 @@ body {
 .navbar-default .navbar-nav > .active > a:focus {
   color: #00cbb5; //warna tulisan yang sedang diklik
   background-color: #FCFCFC;
+  
+  
+  
 }
 .navbar-default {
-	background-color: #fef8e0;
+	background-color: #dde6d5;
 	padding: 25px 0; //besar menu
 	box-shadow: 0 0 3px #B0A48C; //shadow menu
 	font-weight: 500;
-        font-size: 30px;
-        font-family: "BebasBold";
-}
-
-@font-face {
-    font-family: 'BebasBold';
-    src: url('../fonts/BebasBold.otf');
-    font-weight: normal;
-    font-style: normal;
 }
 .navbar-default .navbar-brand {
-	font-weight: 500;
-	font-size: 30px;
-	color: #84b6b3; //tulisanwebdis (gelap)
+	font-weight: 700;
+	font-size: 26px;
+	color: #424242; //tulisanwebdis (gelap)
 }
 .navbar-brand .fa {
 	color: #00cbb5; //orange
@@ -174,7 +141,6 @@ body {
 }
 a img {
 	background:transparent;
-        margin-top: -15px;
 }
 .odd a img {
 	background: #f5f5f5;
@@ -184,7 +150,15 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 200;
 	color: #555;
 }
-
+h1 {
+   font-family: "SEASRN__"; 
+}
+@font-face {
+    font-family: 'SEASRN__';
+    src: url('../fonts/SEASRN__.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
 h2 {
    
 	font-size: 34px;
@@ -302,92 +276,60 @@ a:before, a:after {
 }
 #headerwrap h1 {
 	color: #fef8e0;
-	font-size: 110px;
+	font-size: 70px;
 	font-weight: 600;
 	text-align: center;
 	letter-spacing: 2px;
-        padding-top: 50px;
-        line-height: 80px;
+        padding-top: 60px;
         
-}
-#headerwrap h1{
-   font-family: "BebasBold"; 
-}
-@font-face {
-    font-family: 'BebasBold';
-    src: url('../fonts/BebasBold.otf');
-    font-weight: normal;
-    font-style: normal;
 }
 #headerwrap h2 {
 	color: #fef8e0;
-	font-size: 40px;
-	font-weight: 200;
+	font-size: 25px;
+	font-weight: 600;
 	text-align: center;
-	letter-spacing: 3px;
-        line-height: 30px;
-        
+	letter-spacing: 1px;
 }
-#headerwrap h2{
-   font-family: "OstrichSans-Medium"; 
+#headerwrap h4 {
+	color: #fff;
+	font-size: 22px;
+	font-weight: 300;
+	text-align: center;
+	letter-spacing: 1px;
 }
-@font-face {
-    font-family: 'OstrichSans-Medium';
-    src: url('../fonts/OstrichSans-Medium.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-#headerwrap .btn {
-	margin: 10px 0;
-	background-color: #ff7364;
-	color: #FFFFCC;
-	border: 5px solid #ff7364;
-        padding-left: 80px;
-        padding-right: 80px;
+#headerwrap p {
+	color: #fff;
+	font-size: 22px;
+	font-weight: 300;
+	text-align: center;
+	letter-spacing: 1px;
 }
 #headerwrap .btn {
-   font-family: "BebasRegular"; 
-   line-height: 20px;
-   font-size: 30px;
-   letter-spacing: 10px;
-}
-@font-face {
-    font-family: 'BebasRegular';
-    src: url('../fonts/BebasRegular.otf');
-    font-weight:400;
-    font-style: normal;
-    line-height:500;
-   
-   
+	font-weight: 550;
+	font-size: 17px;
+	margin: 20px 0;
+	background-color: rgba(255,255,255,0);
+	color: #42465F;
+	border: 1px solid #42465F;
 }
 #headerwrap .btn:hover, #headerwrap .btn:focus {
 	color: #555;
-	background-color: #fff9e1;
+	background-color: #fff;
 	outline: 0px;
-	border: 5px solid #fff9e1;
+	border: 1px solid #fff;
 }
 #informasi {
-	background: #dbe6d5;
+	background: #f57d65;
 	padding-top: 90px;
 	padding-right: 0;
 	padding-left: 0;
 	padding-bottom: 135px;
 }
 #informasi h2{
-   font-family: "BebasBold"; 
-   font-size: 70px;
-   text-align: center;
-   color: #494a4e;
-}
-@font-face {
-    font-family: 'BebasBold';
-    src: url('../fonts/BebasBold.otf');
-    font-weight: normal;
-    font-style: normal;
+        color: #F96F6D;
 }
 #informasi p{
-        color: #000;
+        color: #fff;
 }
 
 #informasi img {
@@ -399,32 +341,21 @@ a:before, a:after {
 	border: 0;
 	margin: 3em 0;
 	padding: 0;
-	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
-	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
-	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
-	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
 	width: 50%;
 	left: 25%;
 	position: relative;
 	border: none;
 }
 #materi {
-	background-color: #84b6b3;
+	background-color: #00cbb5;
 	padding: 110px 0;
 }
 #materi .btn-default {
 	border: 0;
-}
-#materi h2{
-   font-family: "BebasBold"; 
-   font-size: 70px;
-   color: #fef8e0;
-}
-@font-face {
-    font-family: 'BebasBold';
-    src: url('../fonts/BebasBold.otf');
-    font-weight: normal;
-    font-style: normal;
 }
 #materi hr {
 	display: block;
@@ -442,50 +373,19 @@ a:before, a:after {
 	border: none;
 }
 #materi1 {
-	background: #dbe6d5;
+	background: #bdfff8;
 	padding-top: 110px;
 	padding-right: 0;
 	padding-left: 0;
 	padding-bottom: 60px;
 }
 #materi1 h2 {
-        color: #494a4e;
+        color: #fff;
 }
-
 #materi1 img {
 	margin-top: 0;
 }
-#materi1 h2{
-   font-family: "BebasBold"; 
-   font-size: 50px;
-}
-@font-face {
-    font-family: 'BebasBold';
-    src: url('../fonts/BebasBold.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-#mat {
-    padding-bottom: 30px;
-	
-}
-#materi1 h3{
-   font-size: 29px;
-   font-color: #fef8e0;
 
-}
-#materi1 h4{
-   font-family: "BebasRegular"; 
-   font-size: 25px;
-   font-color: #fef8e0;
-}
-
-@font-face {
-    font-family: 'BebasRegular';
-    src: url('../fonts/BebasRegular.otf');
-    font-weight: normal;
-    font-style: normal;
-}
 
 #materi1 hr {
 	display: block;
@@ -493,57 +393,23 @@ a:before, a:after {
 	border: 0;
 	margin: 3em 0;
 	padding: 0;
-	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #2f2f2f, rgba(255, 255, 255, 0));
-	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #2f2f2f, rgba(255, 255, 255, 0));
-	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #2f2f2f, rgba(255, 255, 255, 0));
-	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #2f2f2f, rgba(255, 255, 255, 0));
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
 	width: 50%;
 	left: 10%;
 	position: relative;
 	border: none;
 }
-
 #materi2 h2 {
- color: #fef8e0;       
+        color: #fff;
 }
-#materi2 h2{
-   font-family: "BebasBold"; 
-   font-size: 50px;
-   color: #fef8e0;
+#materi2 h3 {
+        color: #fff;
 }
-
-@font-face {
-    font-family: 'BebasBold';
-    src: url('../fonts/BebasBold.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-#materi2 h3{
-   font-size: 29px;
-   font-color: #fef8e0;
-
-}
-#materi2  h4{
-    color: #fef8e0;
-}
-#materi2 h4{
-   font-family: "BebasRegular"; 
-   font-size: 25px;
-}
-
-@font-face {
-    font-family: 'BebasRegular';
-    src: url('../fonts/BebasRegular.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-#materi2 h3{
-    color: #fef8e0;
-    font-size: 25px;
-}
-
 #materi2 {
-	background: #84b6b3;
+	background: #00cbb5;
 	padding-top: 110px;
 	padding-right: 0;
 	padding-left: 0;
@@ -552,19 +418,50 @@ a:before, a:after {
 #materi2 img {
 	margin-top: 0;
 }
-
+#materi2 h2 {
+        color: #F96F6D;
+}
 #materi2 hr {
 	display: block;
 	height: 3px;
 	border: 0;
 	margin: 3em 0;
 	padding: 0;
-	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #fef8e0, rgba(255, 255, 255, 0));
-	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #fef8e0, rgba(255, 255, 255, 0));
-	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #fef8e0, rgba(255, 255, 255, 0));
-	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #fef8e0, rgba(255, 255, 255, 0));
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
 	width: 50%;
 	left: 15%;
+	position: relative;
+	border: none;
+}
+
+#materi3 {
+	background: #bdfff8;
+	padding-top: 110px;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 60px;
+}
+#materi3 img {
+	margin-top: 0;
+}
+#materi3 h2 {
+        color: #F96F6D;
+}
+#materi3 hr {
+	display: block;
+	height: 3px;
+	border: 0;
+	margin: 3em 0;
+	padding: 0;
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	width: 50%;
+	left: 10%;
 	position: relative;
 	border: none;
 }
@@ -575,41 +472,41 @@ a:before, a:after {
 	border: 0;
 	margin: 3em 0;
 	padding: 0;
-	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
-	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
-	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
-	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
 	width: 50%;
 	left: 25%;
 	position: relative;
 	border: none;
 }
 #kuis {
-	background-color: #dbe6d5;
+	background-color: #3D5267;
 	padding: 110px 0;
 	text-align: center;
 	background-size: cover;
 }
-
-#kuis h2{
-   font-family: "BebasBold"; 
-   font-size: 50px;
-   color: #494a4e;
+#kuis hr {
+	display: block;
+	height: 3px;
+	border: 0;
+	margin: 3em 0;
+	padding: 0;
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #71c9d6, rgba(255, 255, 255, 0));
+	width: 50%;
+	left: 25%;
+	position: relative;
+	border: none;
 }
-
-@font-face {
-    font-family: 'BebasBold';
-    src: url('../fonts/BebasBold.otf');
-    font-weight: normal;
-    font-style: normal;
+#kuis H2 {
+	color: #fff;
 }
 #kuis p {
-	color: #494a4e;
-        font-size: 25px;
-}
-#kuis a {
-	color: #494a4e;
-        font-size: 25px;
+	color: #fff;
 }
 #kuis H4 {
 	padding-top: 10px;
@@ -678,7 +575,7 @@ a:before, a:after {
 	margin-right: 4px;
 }
 #footerwrap {
-	background: #fef8e0;
+	background: #2b2b2b;
 	padding: 25px 0 15px 0;
 	border-bottom: 1px solid #ddd;
 	text-align: center;
@@ -742,7 +639,7 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 	left: 0;
 	padding: 20px;
 	color: #fff;
-	background-color: #ff7364;
+	background-color: #97A9BD;
 }
 .grid figcaption h5 {
 	margin: 0;

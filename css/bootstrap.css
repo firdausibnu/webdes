@@ -327,7 +327,10 @@ img {
   -webkit-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;
 }
-
+.img-circle {
+  border-radius: 50%;
+  border: 5px solid #67c5d3;
+}
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
